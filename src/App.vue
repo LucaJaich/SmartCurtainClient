@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm">
+          <LedButton></LedButton>
+        </div>
+        <div class="col-sm">
+          <MotorButton></MotorButton>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LedButton from './components/LedButton.vue'
+import MotorButton from './components/MotorButton.vue'
+import Vue from 'vue'
+import Vue2TouchEvents from 'vue2-touch-events'
+
+Vue.use(Vue2TouchEvents);
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    LedButton, MotorButton
   }
 }
 </script>
@@ -21,7 +34,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
